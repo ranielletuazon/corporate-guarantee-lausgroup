@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "label": "Online Products",
+        "slug": "online-products",
+        "image": "personal-accident.jpg",
+        "desc": "Essential coverage for sudden injuries, disability, and unexpected accidents.",
+        "tags": ["Kasambahay", "Senior Elite"],
+        "moreCount": null,
+        "path": "/products/online-products",
+        "intro": "Corporate Guarantee offers 24/7 worldwide personal accident coverage...",
+        "coverages": []
+    },
+    {
+        "id": 2,
+        "label": "Motor",
+        "slug": "motor",
+        "image": "motor.jpg",
+        "logo": "MOTOR.png",
+        "desc": "Protect your vehicle from the causes of accident by covering the cost of repairs and medical expenses.",
+        "tags": ["CTPL", "Own Damage & Theft", "VTPL", "Acts of Nature"],
+        "moreCount": 2,
+        "path": "/products/motor",
+        "intro": "Protect your vehicle from the causes of accident by covering the cost of repairs and medical expenses.",
+        "coverages": [
+            {
+                "name": "Compulsory Third Party Liability (CTPL)",
+                "desc": "Pays all sum necessary to discharge liability of the insured in respect of bodily injury and/or death to any third party. This policy will indemnify the assured in the settlement of claims for death, bodily injuries, professional fees, and hospital charges for services rendered to traffic accident victims."
+            },
+            {
+                "name": "Own Damage and Theft",
+                "desc": "Provides coverage for the loss and/or damage to the insured vehicle, its accessories and spare parts due to the accident. This also covers theft or carnap of the insured vehicle."
+            },
+            {
+                "name": "Voluntary Third-Party Liability — Bodily Injury (VTPL-BI)",
+                "desc": "Covers all sums necessary to discharge death and bodily injury liability in excess of the CTPL coverage."
+            },
+            {
+                "name": "Voluntary Third-Party Liability — Property Damage (VTPL-PD)",
+                "desc": "Covers all sums necessary to discharge liability of the insured in respect of damage to property in accident caused by or arising out of the use of the insured vehicle."
+            },
+            {
+                "name": "Unnamed Passenger Personal Accident (UPPA)",
+                "desc": "Provides protection for death, bodily injury, and medical reimbursement to any person riding in the insured vehicle due to accident."
+            },
+            {
+                "name": "Acts of Nature (AON)",
+                "desc": "Provides protection to the insured vehicle for the damages caused by natural calamities."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "label": "Fire",
+        "slug": "fire",
+        "image": "fire.webp",
+        "logo": "FIRE.png",
+        "desc": "Covers damages and losses caused by fire to insured property.",
+        "tags": ["Fire", "Earthquake", "Typhoon", "Flood"],
+        "moreCount": 2,
+        "path": "/products/fire",
+        "intro": "Covers the damages and losses caused by fire to the insured property.",
+        "coverages": [
+            {
+                "name": "Allied Perils",
+                "desc": "Covers the insured against loss and damage caused by Earthquake, Typhoon, Flood, Extended Cover, Riot Strike, and Malicious Damage."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "label": "Casualty",
+        "slug": "casualty",
+        "image": "casualty.jpg",
+        "logo": "CASUALTY.png",
+        "desc": "Coverage for legal liability arising from injury to third parties, damage to properties, or unexpected financial losses caused by the insured's negligence or operation. ",
+        "tags": [
+            "Personal Accident",
+            "General Liability",
+            "Fidelity Guarantee",
+            "Engineering"
+        ],
+        "moreCount": 2,
+        "path": "/products/casualty",
+        "intro": "Coverage for legal liability arising from injury to third parties, damage to properties, or unexpected financial losses caused by the insured's negligence or operation. ",
+        "coverages": [
+            {
+                "name": "Comprehensive General Liability Insurance",
+                "desc": "Protects an Insured against legal liabilities that may arise as a result of bodily injury and/or property damage to third party in connection with the Insured's business."
+            },
+            {
+                "name": "Property Floater Insurance",
+                "desc": "Covers property that is easily movable such as heavy equipment, machines, portable electronic equipment, and etc."
+            },
+            {
+                "name": "Fidelity Guarantee Insurance",
+                "desc": "Provides indemnity for direct financial losses as a result of fraudulent or dishonest acts of an insured employee whilst acting in his designated capacity during the period covered subject to the limits set forth in the policy."
+            },
+            {
+                "name": "Money Securities and Payroll Robbery Insurance",
+                "desc": "Protects the insured against loss of money, securities, and payroll due to robbery, hold-up, and burglary within the insured's premises while contained in a locked safe or vault and while outside premises or while in transit in the personal charge of your authorized employee within the declared money routes."
+            },
+            {
+                "name": "Engineering Insurance",
+                "desc": null,
+                "items": [
+                    {
+                        "name": "Contractor's All Risk",
+                        "desc": "Is an insurance for buildings and civil engineering projects during construction against accidents resulting in loss, damage, or destruction of materials, works in progress, construction plant, equipment, or construction machinery."
+                    },
+                    {
+                        "name": "Erection All Risk",
+                        "desc": "Is designed to cover the risk of loss arising out of the erection and installation of machinery, plant and steel structures, including physical damage to the contract works, equipment, and machinery, and liability for third-party bodily injury (BI) or property damage (PD) arising out of these operations."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "label": "Cargo",
+        "slug": "cargo",
+        "image": "cargo.png",
+        "logo": "CARGO.png",
+        "desc": "Coverage for cargo in transit from point of origin to destination.",
+        "tags": ["By Sea", "By Land", "By Air"],
+        "moreCount": null,
+        "path": "/products/cargo",
+        "intro": "This covers cargoes transported by a vessel or ship which navigates from the point of origin to the point of destination.",
+        "coverages": [
+            {
+                "name": "Cargo On Board Trucks",
+                "desc": "This covers cargoes transported within the island via roads and railways using motorized vehicles."
+            },
+            {
+                "name": "Cargo On Board Commercial Airlines",
+                "desc": "This covers cargoes transported via air using commercial airlines."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "label": "Bonds",
+        "slug": "bonds",
+        "image": "bonds.webp",
+        "logo": "BONDS.png",
+        "desc": "Guarantees that secure your contractual and legal obligations — from bidding to project completion.",
+        "tags": [
+            "Bid Bond",
+            "Performance Bond",
+            "Warranty Bond",
+            "Surety Bond"
+        ],
+        "moreCount": null,
+        "path": "/products/bonds",
+        "intro": "Guarantees that protect contractual and financial obligations between a principal and an obligee. This covers everything from construction bids and project completion to debt and default protection.",
+        "coverages": [
+            {
+                "name": "Construction Bond",
+                "desc": null,
+                "items": [
+                    {
+                        "name": "Bid Bond",
+                        "desc": "Guarantees if the principal will win in the bid, he shall enter into a contract with the obligee."
+                    },
+                    {
+                        "name": "Performance Bond",
+                        "desc": "Guarantees that the principal will perform the obligations set forth in the principal contract, specifically completion of the project in accordance with the approved plans, specifications, terms and conditions thereof."
+                    },
+                    {
+                        "name": "Warranty Bond",
+                        "desc": "Guarantees the correction and repair of hidden defects in the materials and workmanship used by the principal."
+                    }
+                ]
+            },
+            {
+                "name": "Surety Bond",
+                "desc": "Is a bond wherein the bonding company promises to answer financially to the obligee for the debt, default, or conduct of the principal."
+            }
+        ]
+    }
+]
