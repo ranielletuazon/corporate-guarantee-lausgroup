@@ -4,13 +4,13 @@ import { X, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 interface Promo {
     image: string;
     alt: string;
-    link: string; // clicking the image/card goes here
-    ctaLink?: string; // clicking "Learn More" goes here — falls back to `link` if omitted
+    link: string;
+    ctaLink?: string;
     eyebrow?: string;
     title?: string;
     ctaLabel?: string;
-    external?: boolean; // true if `link` goes off-site
-    ctaExternal?: boolean; // true if `ctaLink` goes off-site
+    external?: boolean;
+    ctaExternal?: boolean;
 }
 
 interface PromoModalProps {
@@ -18,6 +18,7 @@ interface PromoModalProps {
 }
 
 const SWIPE_THRESHOLD = 50;
+const AUTOPLAY_MS = 2500;
 
 export default function PromoModal({ promos }: PromoModalProps) {
     const [visible, setVisible] = useState(false);
@@ -44,6 +45,13 @@ export default function PromoModal({ promos }: PromoModalProps) {
         },
         [promos.length],
     );
+
+    // Autoplay — runs continuously, does NOT pause on hover, only while the modal is open
+    useEffect(() => {
+        if (!visible || promos.length <= 1) return;
+        const timer = setInterval(next, AUTOPLAY_MS);
+        return () => clearInterval(timer);
+    }, [visible, next, promos.length]);
 
     useEffect(() => {
         if (!visible) return;
@@ -125,7 +133,7 @@ export default function PromoModal({ promos }: PromoModalProps) {
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                 >
-                    {/* Desktop prev/next arrows — only when there's more than one promo */}
+                    {/* Prev/next arrows — hidden on mobile (overlaps text there), visible sm+ */}
                     {promos.length > 1 && (
                         <>
                             <button
@@ -147,12 +155,11 @@ export default function PromoModal({ promos }: PromoModalProps) {
                         </>
                     )}
 
-                    {/* Card body — image link + overlay; button is a SEPARATE sibling link on top */}
+                    {/* Card body */}
                     <div
                         key={current}
                         className="group relative animate-[fadeIn_0.3s_ease-out]"
                     >
-                        {/* Big link — clicking anywhere on the image/overlay text goes to `link` */}
                         <a
                             href={promo.link}
                             target={promo.external ? "_blank" : undefined}
@@ -167,12 +174,11 @@ export default function PromoModal({ promos }: PromoModalProps) {
                             <img
                                 src={promo.image}
                                 alt={promo.alt}
-                                className="sm:w-[800px] sm:h-[600px] object-cover bg-white select-none pointer-events-none"
+                                className="w-full aspect-[4/3] object-contain bg-white select-none pointer-events-none"
                                 draggable={false}
                             />
                         </a>
 
-                        {/* Text overlay — sits on the image, but is not itself a link (button below is) */}
                         {(promo.eyebrow || promo.title || promo.ctaLabel) && (
                             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 bg-gradient-to-t from-[#312d60]/95 via-[#312d60]/60 to-transparent pointer-events-none">
                                 {promo.eyebrow && (
@@ -186,7 +192,6 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                     </h3>
                                 )}
 
-                                {/* Independent link — its own destination, separate from the image link above */}
                                 <a
                                     href={promo.ctaLink ?? promo.link}
                                     target={
