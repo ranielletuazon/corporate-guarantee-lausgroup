@@ -204,7 +204,7 @@ export default function PromoProduct() {
                                         emergencies.
                                     </p>
                                     <a
-                                        href="https://kasambahay-express.com/learn-more"
+                                        href="https://corporate-guarantee-personal-accident.webflow.io/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-4 w-full max-w-xs rounded-full bg-[#2563a8] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#1d4d85]"
@@ -235,7 +235,7 @@ export default function PromoProduct() {
                                         compassionate memorial benefits.
                                     </p>
                                     <a
-                                        href="https://kasambahay-express.com/learn-more"
+                                        href="https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-4 w-full max-w-xs rounded-full bg-[#e07b39] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#c46527]"
