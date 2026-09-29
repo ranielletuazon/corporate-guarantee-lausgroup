@@ -8,7 +8,6 @@ import imageBanner from "../assets/images/herobanner.jpg";
 
 // Promo
 import PromoModal from "./components/PromoModal";
-import promoImage from "../assets/images/promos/promo-image.png";
 
 // SEO
 import SEO, { BASE_URL } from "./components/SEO";
@@ -21,6 +20,9 @@ import {
 
 // Animations
 import Reveal from "./components/Reveal";
+
+import productOffer1 from "../assets/images/promos/offer1.png";
+import productOffer2 from "../assets/images/promos/offer2.png";
 
 export default function Home() {
     const products = getVisibleProducts();
@@ -35,12 +37,28 @@ export default function Home() {
             />
             <Header />
             <PromoModal
-                image={promoImage}
-                alt="Online Products"
-                link="/products/online-products"
-                eyebrow="New Product"
-                title="Online Products"
-                ctaLabel="Learn More"
+                promos={[
+                    {
+                        image: productOffer1,
+                        alt: "Kasambahay Express",
+                        link: "/products/online-products",
+                        ctaLink:
+                            "https://corporate-guarantee-personal-accident.webflow.io/", // "Learn More" goes here
+                        eyebrow: "New",
+                        title: "Kasambahay Express",
+                        ctaLabel: "Learn More",
+                    },
+                    {
+                        image: productOffer2,
+                        alt: "Senior Elite",
+                        link: "/products/online-products",
+                        ctaLink:
+                            "https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite", // "Learn More" here
+                        eyebrow: "New",
+                        title: "Senior Elite",
+                        ctaLabel: "Learn More",
+                    },
+                ]}
             />
             {/* Image Carousel Banner */}
             <Reveal>
