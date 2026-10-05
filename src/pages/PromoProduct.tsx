@@ -102,6 +102,50 @@ export default function PromoProduct() {
 
                     <div className="container mx-auto px-4 xl:px-12 relative z-10">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                            {/* Senior Elite */}
+                            <Reveal delay={150}>
+                                <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#e07b39] p-8 lg:p-10 shadow-lg">
+                                    <span
+                                        className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#312d60]"
+                                        style={{ backgroundColor: "#f2c14e" }}
+                                    >
+                                        New
+                                    </span>
+
+                                    <img
+                                        src={productOffer2}
+                                        alt="Senior Elite"
+                                        className="h-50 object-contain mt-4"
+                                    />
+                                    <span className="mt-3 h-[3px] w-10 bg-[#f2c14e]" />
+
+                                    <p className="mt-3 italic text-slate-500 text-sm">
+                                        Life gets better with age
+                                    </p>
+                                    <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                                        Tailored for senior citizens, this
+                                        specialized personal accident insurance
+                                        provides security during their golden
+                                        years. This policy offers 24/7 worldwide
+                                        protection, including unique coverage
+                                        for medical emergencies and
+                                        compassionate memorial benefits.
+                                    </p>
+                                    <a
+                                        href="https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#e07b39] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#c46527]"
+                                    >
+                                        Buy Now
+                                        <ArrowRight
+                                            size={16}
+                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                        />
+                                    </a>
+                                </div>
+                            </Reveal>
+
                             {/* Kasambahay Express */}
                             <Reveal>
                                 <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#2563a8] p-8 lg:p-10 shadow-lg">
@@ -140,50 +184,6 @@ export default function PromoProduct() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#2563a8] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#1d4d85]"
-                                    >
-                                        Buy Now
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-300 group-hover:translate-x-1"
-                                        />
-                                    </a>
-                                </div>
-                            </Reveal>
-
-                            {/* Senior Elite */}
-                            <Reveal delay={150}>
-                                <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#e07b39] p-8 lg:p-10 shadow-lg">
-                                    <span
-                                        className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#312d60]"
-                                        style={{ backgroundColor: "#f2c14e" }}
-                                    >
-                                        New
-                                    </span>
-
-                                    <img
-                                        src={productOffer2}
-                                        alt="Senior Elite"
-                                        className="h-50 object-contain mt-4"
-                                    />
-                                    <span className="mt-3 h-[3px] w-10 bg-[#f2c14e]" />
-
-                                    <p className="mt-3 italic text-slate-500 text-sm">
-                                        Life gets better with age
-                                    </p>
-                                    <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
-                                        Tailored for senior citizens, this
-                                        specialized personal accident insurance
-                                        provides security during their golden
-                                        years. This policy offers 24/7 worldwide
-                                        protection, including unique coverage
-                                        for medical emergencies and
-                                        compassionate memorial benefits.
-                                    </p>
-                                    <a
-                                        href="https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#e07b39] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#c46527]"
                                     >
                                         Buy Now
                                         <ArrowRight
