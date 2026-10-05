@@ -19,7 +19,16 @@ const navItems: NavItem[] = [
             { label: "Corporate Governance", path: "/corporate-governance" },
         ],
     },
-    { label: "Products", path: "/products" },
+    {
+        label: "Products",
+        path: "/products",
+        children: [
+            {
+                label: "Buy Products Now",
+                path: "/products/online-products",
+            },
+        ],
+    },
     { label: "Updates", path: "/updates" },
     {
         label: "Careers",

@@ -3,10 +3,10 @@
         "id": 1,
         "label": "Online Products",
         "slug": "online-products",
-        "image": "personal-accident.jpg",
+        "image": "collage.png",
         "desc": "Essential coverage for sudden injuries, disability, and unexpected accidents.",
         "tags": ["Kasambahay", "Senior Elite"],
-        "moreCount": null,
+        "moreCount": 1,
         "path": "/products/online-products",
         "intro": "Corporate Guarantee offers 24/7 worldwide personal accident coverage...",
         "coverages": []

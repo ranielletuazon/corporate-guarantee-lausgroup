@@ -1,54 +1,41 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
-import { ArrowLeft } from "lucide-react";
-
-import heroImage from "../assets/images/promos/hero-image.jpg";
-import productImage from "../assets/images/promos/promo-image.png";
-
-import financialProtectionIcon from "../assets/images/promos/prod1.png";
-import incomeSupplementIcon from "../assets/images/promos/prod2.png";
-import familyFutureIcon from "../assets/images/promos/prod3.png";
+import { ArrowRight, ArrowLeft, Star } from "lucide-react";
 
 import productOffer1 from "../assets/images/promos/offer1.png";
 import productOffer2 from "../assets/images/promos/offer2.png";
+import productOffer3 from "../assets/images/promos/offer3.png";
 
-const benefits = [
-    {
-        icon: financialProtectionIcon,
-        title: "Financial Protection",
-        desc: "When an accident occurs (a fall, a collision, or a sports injury), a Personal Accident policy provides a crucial financial shield and assistance to help you manage the immediate aftermath.",
-    },
-    {
-        icon: incomeSupplementIcon,
-        title: "Income Supplement",
-        desc: "When your injury prevents you from working, your regular bills don't stop. Personal Accident Insurance allows you to use your payout benefit while you focus entirely on your recovery.",
-    },
-    {
-        icon: familyFutureIcon,
-        title: "Securing Your Family's Future",
-        desc: "True recovery requires mental ease. By eliminating financial stress, you protect your family from the secondary crisis of debt and won't derail their long-term financial goals.",
-    },
-];
+// Family gift-giving photo — used as the hero background
+import giftGivingBg from "../assets/images/promos/yuletide.webp";
 
 export default function PromoProduct() {
     return (
         <>
             <Header />
 
-            {/* ============ HERO — product photo + navy wash ============ */}
+            {/* ============ HERO — yuletide photo + navy/maroon wash ============ */}
             <section className="relative overflow-hidden">
                 <img
-                    src={heroImage}
+                    src={giftGivingBg}
                     alt="Online Products Insurance"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#312d60]/95 via-[#312d60]/85 to-[#312d60]/60" />
+                {/* Base navy wash, warmed slightly with a maroon undertone for the season */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#312d60]/95 via-[#3d1f3a]/88 to-[#312d60]/60" />
                 <div
                     className="absolute top-0 right-0 h-40 w-40 bg-[#d93338]/25"
                     style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
                     aria-hidden="true"
                 />
+                {/* Festive gold echo, bottom-left — balances the existing red triangle */}
+                <div
+                    className="absolute bottom-0 left-0 h-28 w-28 bg-[#f2c14e]/20"
+                    style={{ clipPath: "polygon(0 100%, 100% 100%, 0 0)" }}
+                    aria-hidden="true"
+                />
+
                 <Reveal>
                     <div className="container mx-auto px-4 xl:px-12 py-20 lg:py-28 relative z-10">
                         <a
@@ -60,15 +47,11 @@ export default function PromoProduct() {
                         </a>
 
                         <div className="flex items-center gap-5">
-                            {/* <img
-                                src={productImage}
-                                alt=""
-                                aria-hidden="true"
-                                className="w-16 h-16 object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]"
-                            /> */}
                             <div>
-                                <span className="text-[12px] font-bold tracking-[0.25em] uppercase text-[#d93338]">
-                                    Insurance
+                                <span className="inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.25em] uppercase text-[#f2c14e]">
+                                    <Star size={12} fill="currentColor" />
+                                    SPECIAL OFFERS
+                                    <Star size={12} fill="currentColor" />
                                 </span>
                                 <h1 className="mt-1 text-4xl lg:text-5xl font-bold uppercase tracking-wide text-white">
                                     Online Products
@@ -76,10 +59,32 @@ export default function PromoProduct() {
                             </div>
                         </div>
 
-                        <div className="mt-6 h-[3px] w-16 bg-[#d93338]" />
-                        <p className="mt-6 max-w-2xl text-white/80 leading-relaxed">
-                            Essential coverage for sudden injuries, disability,
-                            and unexpected accidents.
+                        {/* Candy-cane divider instead of a plain bar */}
+                        <div
+                            className="mt-6 h-[4px] w-20"
+                            style={{
+                                backgroundImage:
+                                    "repeating-linear-gradient(-45deg, #d93338 0 6px, #ffffff 6px 12px)",
+                            }}
+                            aria-hidden="true"
+                        />
+
+                        <p className="mt-6 max-w-2xl text-white/80 leading-relaxed text-lg">
+                            Because{" "}
+                            <span className="font-bold text-[#d93338]">
+                                Christmas
+                            </span>{" "}
+                            is about giving to the people who matter most, share
+                            the gift of{" "}
+                            <span className="font-bold text-[#d93338]">
+                                Love
+                            </span>
+                            , <span className="font-bold text-white">Care</span>
+                            , and{" "}
+                            <span className="font-bold text-[#d93338]">
+                                Coverage
+                            </span>
+                            .
                         </p>
                     </div>
                 </Reveal>
@@ -87,109 +92,36 @@ export default function PromoProduct() {
 
             {/* ============ BODY ============ */}
             <div className="w-full bg-slate-50">
-                {/* ============ INTRO — photo + copy ============ */}
-                <section className="py-16 lg:py-24">
-                    <div className="container mx-auto px-4 xl:px-12">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-                            <Reveal>
-                                <p className="text-slate-600 leading-relaxed">
-                                    Corporate Guarantee offers 24/7 worldwide
-                                    personal accident coverage tailored for
-                                    senior citizens and household staff. Our
-                                    plans provide essential financial support
-                                    for medical emergencies, accidental
-                                    injuries, and compassionate death benefits
-                                    to ensure reliable protection for your loved
-                                    ones and household staff.
-                                </p>
-                            </Reveal>
-
-                            <Reveal delay={150}>
-                                <div className="relative">
-                                    <span
-                                        className="absolute -bottom-3 -right-3 h-full w-full bg-[#312d60]"
-                                        aria-hidden="true"
-                                    />
-                                    <div className="relative z-10 aspect-[4/3] w-full overflow-hidden border border-slate-200">
-                                        <img
-                                            src={productImage}
-                                            alt="Senior citizens and caregiver at home"
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <span
-                                        className="absolute top-0 left-0 z-20 h-[3px] w-16 bg-[#d93338]"
-                                        aria-hidden="true"
-                                    />
-                                </div>
-                            </Reveal>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ============ WHY IT MATTERS ============ */}
-                <section className="bg-white pt-16 lg:py-24">
-                    <div className="container mx-auto px-4 xl:px-12">
-                        <Reveal>
-                            <div className="max-w-2xl mx-auto text-center">
-                                <span className="text-[12px] font-bold tracking-[0.25em] uppercase text-[#d93338]">
-                                    Why It Matters
-                                </span>
-                                <h2 className="mt-3 text-2xl lg:text-3xl font-bold text-[#312d60]">
-                                    BECAUSE LIFE HAPPENS, PERSONAL ACCIDENT
-                                    INSURANCE MATTERS
-                                </h2>
-                                <div className="mx-auto mt-4 h-[3px] w-16 bg-[#d93338]" />
-                                <p className="mt-6 text-slate-600 leading-relaxed">
-                                    Even the most well-planned life can meet the
-                                    unexpected. Personal Accident Insurance
-                                    provides a vital safety net for those
-                                    moments you didn't see coming — offering
-                                    financial support for medical costs,
-                                    disablement, or life's most difficult
-                                    transitions. Protect what you've built
-                                    against the unplanned.
-                                </p>
-                            </div>
-                        </Reveal>
-
-                        {/* Benefit cards */}
-                        <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-10">
-                            {benefits.map((b, i) => (
-                                <Reveal key={b.title} delay={i * 150}>
-                                    <div className="flex flex-col items-center text-center">
-                                        <img
-                                            src={b.icon}
-                                            alt=""
-                                            aria-hidden="true"
-                                            className="w-50 h-50 object-contain"
-                                        />
-                                        <h3 className="mt-6 text-base font-bold uppercase tracking-wide text-[#312d60]">
-                                            {b.title}
-                                        </h3>
-                                        <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                                            {b.desc}
-                                        </p>
-                                    </div>
-                                </Reveal>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
                 {/* ============ Product Display ============ */}
-                <section className="bg-white py-10 lg:py-24">
-                    <div className="container mx-auto px-4 xl:px-12">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <section className="relative py-10 lg:py-24 overflow-hidden">
+                    <div className="absolute inset-0 bg-white/20" />
+                    <div
+                        className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/85 to-white/95"
+                        aria-hidden="true"
+                    />
+
+                    <div className="container mx-auto px-4 xl:px-12 relative z-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                             {/* Kasambahay Express */}
                             <Reveal>
-                                <div className="flex flex-col items-center text-center h-full bg-white border-2 border-[#2563a8] p-8 lg:p-10">
+                                <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#2563a8] p-8 lg:p-10 shadow-lg">
+                                    {/* Gold holiday-offer ribbon */}
+                                    <span
+                                        className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#312d60]"
+                                        style={{ backgroundColor: "#f2c14e" }}
+                                    >
+                                        New
+                                    </span>
+
                                     <img
                                         src={productOffer1}
                                         alt="Kasambahay Express"
-                                        className="h-50 object-contain"
+                                        className="h-50 object-contain mt-4"
                                     />
-                                    <p className="mt-2 italic text-slate-500 text-sm">
+                                    {/* Thin gold accent under the logo */}
+                                    <span className="mt-3 h-[3px] w-10 bg-[#f2c14e]" />
+
+                                    <p className="mt-3 italic text-slate-500 text-sm">
                                         Caring for those who care for us
                                     </p>
                                     <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
@@ -207,22 +139,35 @@ export default function PromoProduct() {
                                         href="https://corporate-guarantee-personal-accident.webflow.io/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-4 w-full max-w-xs rounded-full bg-[#2563a8] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#1d4d85]"
+                                        className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#2563a8] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#1d4d85]"
                                     >
-                                        Learn More
+                                        Buy Now
+                                        <ArrowRight
+                                            size={16}
+                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                        />
                                     </a>
                                 </div>
                             </Reveal>
 
                             {/* Senior Elite */}
                             <Reveal delay={150}>
-                                <div className="flex flex-col items-center text-center h-full bg-white border-2 border-[#e07b39] p-8 lg:p-10">
+                                <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#e07b39] p-8 lg:p-10 shadow-lg">
+                                    <span
+                                        className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#312d60]"
+                                        style={{ backgroundColor: "#f2c14e" }}
+                                    >
+                                        New
+                                    </span>
+
                                     <img
                                         src={productOffer2}
                                         alt="Senior Elite"
-                                        className="h-50 object-contain"
+                                        className="h-50 object-contain mt-4"
                                     />
-                                    <p className="mt-2 italic text-slate-500 text-sm">
+                                    <span className="mt-3 h-[3px] w-10 bg-[#f2c14e]" />
+
+                                    <p className="mt-3 italic text-slate-500 text-sm">
                                         Life gets better with age
                                     </p>
                                     <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
@@ -238,14 +183,59 @@ export default function PromoProduct() {
                                         href="https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="mt-4 w-full max-w-xs rounded-full bg-[#e07b39] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#c46527]"
+                                        className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#e07b39] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#c46527]"
                                     >
-                                        Learn More
+                                        Buy Now
+                                        <ArrowRight
+                                            size={16}
+                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                        />
                                     </a>
+                                </div>
+                            </Reveal>
+
+                            {/* Golfer's Shield — coming soon, dimmed/inactive treatment */}
+                            <Reveal delay={300}>
+                                <div className="relative flex flex-col items-center text-center h-full bg-slate-50/95 backdrop-blur-sm border-2 border-slate-300 p-8 lg:p-10 shadow-lg overflow-hidden">
+                                    {/* Coming Soon ribbon — gray, not gold, to visually read as "inactive" */}
+                                    <span className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-white bg-slate-500">
+                                        Coming Soon
+                                    </span>
+
+                                    <img
+                                        src={productOffer3}
+                                        alt="Golfer's Shield — coming soon"
+                                        className="h-50 object-contain mt-4 grayscale opacity-60"
+                                    />
+                                    <span className="mt-3 h-[3px] w-10 bg-slate-300" />
+
+                                    <p className="mt-3 italic text-slate-400 text-sm">
+                                        [Header Text]
+                                    </p>
+                                    <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">
+                                        [Sentence Text]
+                                    </p>
+
+                                    <span
+                                        className="mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-slate-300 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-slate-600 text-center cursor-not-allowed select-none"
+                                        aria-disabled="true"
+                                    >
+                                        Coming Soon
+                                    </span>
                                 </div>
                             </Reveal>
                         </div>
                     </div>
+
+                    {/* Bottom candy-cane stripe — bookends the section before the footer */}
+                    <div
+                        className="absolute bottom-0 left-0 right-0 h-[5px]"
+                        style={{
+                            backgroundImage:
+                                "repeating-linear-gradient(-45deg, #d93338 0 12px, #ffffff 12px 24px)",
+                        }}
+                        aria-hidden="true"
+                    />
                 </section>
             </div>
             <Footer />

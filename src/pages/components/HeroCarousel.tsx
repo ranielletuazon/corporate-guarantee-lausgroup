@@ -2,12 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 
 // Slide images — served directly from /public/images/
 const slides = [
-    { src: "/images/newslider1.png", alt: "Corporate Guarantee — slide 1" },
-    { src: "/images/slider2.jpg", alt: "Corporate Guarantee — slide 2" },
-    { src: "/images/slider3.jpg", alt: "Corporate Guarantee — slide 3" },
-    { src: "/images/slider4.jpg", alt: "Corporate Guarantee — slide 4" },
-    { src: "/images/slider5.jpg", alt: "Corporate Guarantee — slide 5" },
-    { src: "/images/slider6.jpg", alt: "Corporate Guarantee — slide 6" },
+    { src: "/images/collage.png", alt: "Corporate Guarantee — slide 1" },
+    { src: "/images/newslider1.png", alt: "Corporate Guarantee — slide 2" },
+    { src: "/images/slider2.jpg", alt: "Corporate Guarantee — slide 3" },
+    { src: "/images/slider3.jpg", alt: "Corporate Guarantee — slide 4" },
+    { src: "/images/slider4.jpg", alt: "Corporate Guarantee — slide 5" },
+    { src: "/images/slider5.jpg", alt: "Corporate Guarantee — slide 6" },
+    { src: "/images/slider6.jpg", alt: "Corporate Guarantee — slide 7" },
 ];
 
 const AUTOPLAY_MS = 5000;

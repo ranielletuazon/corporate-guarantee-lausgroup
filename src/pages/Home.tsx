@@ -39,24 +39,18 @@ export default function Home() {
             <PromoModal
                 promos={[
                     {
-                        image: productOffer1,
-                        alt: "Kasambahay Express",
-                        link: "/products/online-products",
-                        ctaLink:
-                            "https://corporate-guarantee-personal-accident.webflow.io/", // "Learn More" goes here
-                        eyebrow: "New",
-                        title: "Kasambahay Express",
-                        ctaLabel: "Learn More",
+                        image: productOffer2,
+                        alt: "Senior Elite — Personal Accident for Senior Citizens",
+                        title: "",
+                        link: "https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite",
+                        accent: "#e07b39",
                     },
                     {
-                        image: productOffer2,
-                        alt: "Senior Elite",
-                        link: "/products/online-products",
-                        ctaLink:
-                            "https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite", // "Learn More" here
-                        eyebrow: "New",
-                        title: "Senior Elite",
-                        ctaLabel: "Learn More",
+                        image: productOffer1,
+                        alt: "Kasambahay Express — Personal Accident",
+                        title: "",
+                        link: "https://corporate-guarantee-personal-accident.webflow.io/",
+                        accent: "#2563a8",
                     },
                 ]}
             />
