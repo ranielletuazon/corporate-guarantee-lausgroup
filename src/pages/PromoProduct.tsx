@@ -210,10 +210,10 @@ export default function PromoProduct() {
                                     <span className="mt-3 h-[3px] w-10 bg-slate-300" />
 
                                     <p className="mt-3 italic text-slate-400 text-sm">
-                                        [Header Text]
+                                        Coming Soon
                                     </p>
                                     <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">
-                                        [Sentence Text]
+                                        Coming Soon
                                     </p>
 
                                     <span

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, ArrowRight, Star } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 // Swap this for the actual file path once it's in src/assets/images/
 // e.g. import promoHeaderBg from "../../assets/images/promos/family-christmas.jpg";
@@ -12,6 +12,7 @@ interface Promo {
     eyebrow?: string; // e.g. "Holiday Offer"
     title?: string; // product name
     tagline?: string; // short one-liner under the title
+    description?: string; // longer blurb, a sentence or two
     ctaLabel?: string; // defaults to "Buy Now"
     external?: boolean;
     accent?: string; // hex color to theme this card's badge/button — falls back to holiday red
@@ -90,7 +91,7 @@ export default function PromoModal({ promos }: PromoModalProps) {
                     />
 
                     {/* Header — family photo background with a maroon/red overlay for legibility */}
-                    <div className="relative flex-none px-6 py-6 sm:py-8 text-center overflow-hidden">
+                    <div className="relative flex-none px-5 py-4 sm:px-6 sm:py-8 text-center overflow-hidden">
                         <img
                             src={promoHeaderBg}
                             alt=""
@@ -100,42 +101,55 @@ export default function PromoModal({ promos }: PromoModalProps) {
                         <div className="absolute inset-0 bg-gradient-to-b from-[#3a0a0f]/90 via-[#5c1219]/85 to-[#7a1220]/90" />
 
                         <div className="relative z-10">
-                            <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.3em] uppercase text-[#f2c14e]">
-                                <Star size={12} fill="currentColor" />
-                                Online Products
-                                <Star size={12} fill="currentColor" />
+                            <p className="text-white/80 leading-snug text-[11px] sm:text-base">
+                                Because{" "}
+                                <span className="font-bold text-white">
+                                    Christmas
+                                </span>{" "}
+                                is about giving to the people who matter most,
+                                share the gift of{" "}
+                                <span className="font-bold text-white">
+                                    Love
+                                </span>
+                                ,{" "}
+                                <span className="font-bold text-white">
+                                    Care
+                                </span>
+                                , and{" "}
+                                <span className="font-bold text-white">
+                                    Coverage
+                                </span>
+                                .
+                            </p>
+                            <span className="inline-flex items-center gap-2 mt-1.5 sm:mt-0 text-[9px] sm:text-[11px] font-bold tracking-[0.15em] sm:tracking-[0.3em] uppercase text-[#f2c14e]">
+                                Online Products, Now Available!
                             </span>
-                            <h2 className="mt-2 text-sm sm:text-base font-bold uppercase tracking-wide text-white">
-                                Because Christmas is about giving to the people
-                                who matter most, share the gift of Love, Care,
-                                and Coverage.
-                            </h2>
                         </div>
                     </div>
 
-                    {/* Two products — side by side on sm+, stacked on mobile. Scrolls internally if content still runs tall. */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 overflow-y-auto">
+                    {/* Two products — always side by side, even on mobile. Scrolls internally if content still runs tall. */}
+                    <div className="grid grid-cols-2 divide-x divide-slate-200 overflow-y-auto">
                         {promos.slice(0, 2).map((promo, i) => {
                             const accent = promo.accent ?? "#b8232c";
                             return (
                                 <div
                                     key={i}
-                                    className="group flex flex-col bg-white"
+                                    className="group flex flex-col bg-white min-w-0"
                                 >
-                                    {/* Product image — fixed height on mobile so it can't blow out the viewport, square on sm+ */}
+                                    {/* Product image — compact on mobile so two columns fit without crowding */}
                                     <div
-                                        className="relative w-full h-36 sm:h-auto sm:aspect-square overflow-hidden bg-slate-50 flex items-center justify-center p-4 sm:p-6 border-t-4"
+                                        className="relative w-full h-70 sm:h-100 overflow-hidden bg-slate-50 flex items-center justify-center p-2 sm:p-4 border-t-4"
                                         style={{ borderTopColor: "#f2c14e" }}
                                     >
                                         <img
                                             src={promo.image}
                                             alt={promo.alt}
-                                            className="w-full h-full object-contain transition-transform duration-500 select-none"
+                                            className="w-full h-full object-cover transition-transform duration-500 select-none"
                                             draggable={false}
                                         />
                                         {promo.eyebrow && (
                                             <span
-                                                className="absolute top-2 left-2 sm:top-3 sm:left-3 px-2.5 py-1 text-[9px] sm:text-[10px] font-bold tracking-[0.2em] uppercase text-white"
+                                                className="absolute top-1 left-1 sm:top-3 sm:left-3 px-1.5 py-0.5 sm:px-2.5 sm:py-1 text-[6px] sm:text-[10px] font-bold tracking-[0.08em] sm:tracking-[0.2em] uppercase text-white leading-none"
                                                 style={{
                                                     backgroundColor: accent,
                                                 }}
@@ -146,15 +160,20 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                     </div>
 
                                     {/* Text + CTA */}
-                                    <div className="flex flex-col flex-1 px-5 py-4 sm:px-6 sm:py-6 text-center border-t border-slate-100">
+                                    <div className="flex flex-col flex-1 px-2.5 py-3 sm:px-6 sm:py-6 text-center justify-between border-t border-slate-100 min-w-0">
                                         {promo.title && (
-                                            <h3 className="text-sm sm:text-lg font-bold uppercase tracking-wide text-[#7a1220] leading-snug">
+                                            <h3 className="text-[11px] sm:text-lg font-bold uppercase tracking-tight sm:tracking-wide text-[#7a1220] leading-tight break-words">
                                                 {promo.title}
                                             </h3>
                                         )}
                                         {promo.tagline && (
-                                            <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                            <p className="mt-1 sm:mt-2 text-[9px] sm:text-sm font-semibold text-slate-700 leading-snug">
                                                 {promo.tagline}
+                                            </p>
+                                        )}
+                                        {promo.description && (
+                                            <p className="mt-1 text-[8px] sm:text-xs text-slate-500 leading-snug line-clamp-3 sm:line-clamp-none">
+                                                {promo.description}
                                             </p>
                                         )}
 
@@ -170,7 +189,7 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                                     ? "noopener noreferrer"
                                                     : undefined
                                             }
-                                            className="mt-3 sm:mt-5 inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-white transition-opacity duration-300 hover:opacity-90 cursor-pointer"
+                                            className="mt-2 sm:mt-1 w-full sm:w-auto inline-flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-6 py-1.5 sm:py-3 text-[9px] sm:text-[12px] font-bold tracking-tight sm:tracking-[0.2em] uppercase text-white transition-opacity duration-300 hover:opacity-90 cursor-pointer whitespace-nowrap"
                                             style={{
                                                 borderRadius: 0,
                                                 backgroundColor: accent,
@@ -178,8 +197,8 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                         >
                                             {promo.ctaLabel ?? "Buy Now"}
                                             <ArrowRight
-                                                size={14}
-                                                className="transition-transform duration-300 group-hover:translate-x-1"
+                                                size={12}
+                                                className="shrink-0 transition-transform duration-300 group-hover:translate-x-1"
                                             />
                                         </a>
                                     </div>

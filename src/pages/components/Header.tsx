@@ -20,14 +20,24 @@ const navItems: NavItem[] = [
         ],
     },
     {
-        label: "Products",
-        path: "/products",
+        label: "Buy Online",
+        path: "/products/online-products",
         children: [
             {
-                label: "Buy Products Now",
-                path: "/products/online-products",
+                label: "Senior Elite",
+                path: "https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite",
+                external: true,
+            },
+            {
+                label: "Kasambahay Express",
+                path: "https://corporate-guarantee-personal-accident.webflow.io/",
+                external: true,
             },
         ],
+    },
+    {
+        label: "Products",
+        path: "/products",
     },
     { label: "Updates", path: "/updates" },
     {

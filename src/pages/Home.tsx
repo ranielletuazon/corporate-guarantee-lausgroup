@@ -21,8 +21,8 @@ import {
 // Animations
 import Reveal from "./components/Reveal";
 
-import productOffer1 from "../assets/images/promos/offer1.png";
-import productOffer2 from "../assets/images/promos/offer2.png";
+import productOffer1 from "../assets/images/promos/senior.png";
+import productOffer2 from "../assets/images/promos/kasambahay.png";
 
 export default function Home() {
     const products = getVisibleProducts();
