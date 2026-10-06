@@ -3,9 +3,9 @@ import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
 import { ArrowRight, ArrowLeft, Star } from "lucide-react";
 
-import productOffer1 from "../assets/images/promos/offer1.png";
-import productOffer2 from "../assets/images/promos/offer2.png";
-import productOffer3 from "../assets/images/promos/offer3.png";
+import productOffer1 from "../assets/images/promos/offer1.jpg";
+import productOffer2 from "../assets/images/promos/offer2.jpg";
+// import productOffer3 from "../assets/images/promos/offer3.png";
 
 // Family gift-giving photo — used as the hero background
 import giftGivingBg from "../assets/images/promos/yuletide.webp";
@@ -101,28 +101,18 @@ export default function PromoProduct() {
                     />
 
                     <div className="container mx-auto px-4 xl:px-12 relative z-10">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             {/* Senior Elite */}
                             <Reveal delay={150}>
-                                <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#e07b39] p-8 lg:p-10 shadow-lg">
-                                    <span
-                                        className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#312d60]"
-                                        style={{ backgroundColor: "#f2c14e" }}
-                                    >
-                                        New
-                                    </span>
-
+                                <div className="flex h-full flex-col items-center">
+                                    {/* The image is the whole card (logo, tagline and description are in it) */}
                                     <img
                                         src={productOffer2}
-                                        alt="Senior Elite"
-                                        className="h-50 object-contain mt-4"
+                                        alt="Senior Elite: Life gets better with age"
+                                        className="block h-100 w-full"
                                     />
-                                    <span className="mt-3 h-[3px] w-10 bg-[#f2c14e]" />
-
-                                    <p className="mt-3 italic text-slate-500 text-sm">
-                                        Life gets better with age
-                                    </p>
-                                    <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                                    {/* The card text lives inside the image, so keep it readable for screen readers and search engines */}
+                                    <p className="sr-only">
                                         Tailored for senior citizens, this
                                         specialized personal accident insurance
                                         provides security during their golden
@@ -135,7 +125,8 @@ export default function PromoProduct() {
                                         href="https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#e07b39] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#c46527]"
+                                        aria-label="Buy Senior Elite now"
+                                        className="group mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#e07b39] px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#c46527] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e07b39] focus-visible:ring-offset-2"
                                     >
                                         Buy Now
                                         <ArrowRight
@@ -148,27 +139,13 @@ export default function PromoProduct() {
 
                             {/* Kasambahay Express */}
                             <Reveal>
-                                <div className="relative flex flex-col items-center text-center h-full bg-white/95 backdrop-blur-sm border-2 border-[#2563a8] p-8 lg:p-10 shadow-lg">
-                                    {/* Gold holiday-offer ribbon */}
-                                    <span
-                                        className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#312d60]"
-                                        style={{ backgroundColor: "#f2c14e" }}
-                                    >
-                                        New
-                                    </span>
-
+                                <div className="flex h-full flex-col items-center">
                                     <img
                                         src={productOffer1}
-                                        alt="Kasambahay Express"
-                                        className="h-50 object-contain mt-4"
+                                        alt="Kasambahay Express: Caring for those who care for us"
+                                        className="block h-100 w-full"
                                     />
-                                    {/* Thin gold accent under the logo */}
-                                    <span className="mt-3 h-[3px] w-10 bg-[#f2c14e]" />
-
-                                    <p className="mt-3 italic text-slate-500 text-sm">
-                                        Caring for those who care for us
-                                    </p>
-                                    <p className="mt-2 text-sm text-slate-600 leading-relaxed flex-1">
+                                    <p className="sr-only">
                                         Designed for household staff employed in
                                         the Philippines, this personal accident
                                         insurance ensures that the people who
@@ -183,7 +160,8 @@ export default function PromoProduct() {
                                         href="https://corporate-guarantee-personal-accident.webflow.io/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-[#2563a8] px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white text-center transition-colors hover:bg-[#1d4d85]"
+                                        aria-label="Buy Kasambahay Express now"
+                                        className="group mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#2563a8] px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-[#1d4d85] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563a8] focus-visible:ring-offset-2"
                                     >
                                         Buy Now
                                         <ArrowRight
@@ -193,37 +171,35 @@ export default function PromoProduct() {
                                     </a>
                                 </div>
                             </Reveal>
+                            {/*
+    <Reveal delay={300}>
+        <div className="relative flex flex-col items-center text-center h-full bg-slate-50/95 backdrop-blur-sm border-2 border-slate-300 p-8 lg:p-10 shadow-lg overflow-hidden">
+            <span className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-white bg-slate-500">
+                Coming Soon
+            </span>
 
-                            {/* Golfer's Shield — coming soon, dimmed/inactive treatment */}
-                            <Reveal delay={300}>
-                                <div className="relative flex flex-col items-center text-center h-full bg-slate-50/95 backdrop-blur-sm border-2 border-slate-300 p-8 lg:p-10 shadow-lg overflow-hidden">
-                                    {/* Coming Soon ribbon — gray, not gold, to visually read as "inactive" */}
-                                    <span className="absolute -top-px -left-px px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-white bg-slate-500">
-                                        Coming Soon
-                                    </span>
+            <img
+                src={productOffer3}
+                alt="Golfer's Shield — coming soon"
+                className="h-50 object-contain mt-4 grayscale opacity-60"
+            />
+            <span className="mt-3 h-[3px] w-10 bg-slate-300" />
 
-                                    <img
-                                        src={productOffer3}
-                                        alt="Golfer's Shield — coming soon"
-                                        className="h-50 object-contain mt-4 grayscale opacity-60"
-                                    />
-                                    <span className="mt-3 h-[3px] w-10 bg-slate-300" />
+            <p className="mt-3 italic text-slate-400 text-sm">
+                Coming Soon
+            </p>
+            <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">
+                Coming Soon
+            </p>
 
-                                    <p className="mt-3 italic text-slate-400 text-sm">
-                                        Coming Soon
-                                    </p>
-                                    <p className="mt-2 text-sm text-slate-500 leading-relaxed flex-1">
-                                        Coming Soon
-                                    </p>
-
-                                    <span
-                                        className="mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-slate-300 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-slate-600 text-center cursor-not-allowed select-none"
-                                        aria-disabled="true"
-                                    >
-                                        Coming Soon
-                                    </span>
-                                </div>
-                            </Reveal>
+            <span
+                className="mt-4 w-full max-w-xs inline-flex items-center justify-center gap-2 rounded-full bg-slate-300 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-slate-600 text-center cursor-not-allowed select-none"
+                aria-disabled="true"
+            >
+                Coming Soon
+            </span>
+        </div>
+    </Reveal> */}
                         </div>
                     </div>
 

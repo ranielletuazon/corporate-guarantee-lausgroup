@@ -1,14 +1,69 @@
 import { useState, useEffect, useCallback } from "react";
 
+interface Slide {
+    src: string;
+    alt: string;
+    cta?: { label: string; href: string }; // optional per-slide button
+}
+
 // Slide images — served directly from /public/images/
-const slides = [
-    { src: "/images/collage.png", alt: "Corporate Guarantee — slide 1" },
-    { src: "/images/newslider1.png", alt: "Corporate Guarantee — slide 2" },
-    { src: "/images/slider2.jpg", alt: "Corporate Guarantee — slide 3" },
-    { src: "/images/slider3.jpg", alt: "Corporate Guarantee — slide 4" },
-    { src: "/images/slider4.jpg", alt: "Corporate Guarantee — slide 5" },
-    { src: "/images/slider5.jpg", alt: "Corporate Guarantee — slide 6" },
-    { src: "/images/slider6.jpg", alt: "Corporate Guarantee — slide 7" },
+const slides: Slide[] = [
+    {
+        src: "/images/collage.jpg",
+        alt: "Corporate Guarantee — slide 1",
+        cta: {
+            label: "Buy Now",
+            href: "/products/online-products",
+        },
+    },
+    {
+        src: "/images/newslider1.png",
+        alt: "Corporate Guarantee — slide 2",
+        cta: {
+            label: "Learn More",
+            href: "#",
+        },
+    },
+    {
+        src: "/images/slider2.jpg",
+        alt: "Corporate Guarantee — slide 3",
+        cta: {
+            label: "Learn More",
+            href: "#",
+        },
+    },
+    {
+        src: "/images/slider3.jpg",
+        alt: "Corporate Guarantee — slide 4",
+        cta: {
+            label: "Learn More",
+            href: "#",
+        },
+    },
+    {
+        src: "/images/slider4.jpg",
+        alt: "Corporate Guarantee — slide 5",
+        cta: {
+            label: "Learn More",
+            href: "#",
+        },
+    },
+    {
+        src: "/images/slider5.jpg",
+        alt: "Corporate Guarantee — slide 6",
+        cta: {
+            label: "Learn More",
+            href: "#",
+        },
+    },
+    {
+        src: "/images/slider6.jpg",
+        alt: "Corporate Guarantee — slide 7",
+        cta: {
+            label: "Learn More",
+            href: "#",
+        },
+    },
 ];
 
 const AUTOPLAY_MS = 5000;
@@ -53,6 +108,19 @@ export default function HeroCarousel() {
                         alt={slide.alt}
                         className="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                     />
+
+                    {/* Per-slide CTA — bottom center, sits above the indicator dots */}
+                    {slide.cta && (
+                        <a
+                            href={slide.cta.href}
+                            tabIndex={i === current ? 0 : -1}
+                            className={`absolute left-1/2 -translate-x-1/2 bottom-9 md:bottom-14 inline-flex items-center justify-center whitespace-nowrap bg-[#d93338] px-4 py-1.5 md:px-8 md:py-3 text-[10px] md:text-sm font-bold uppercase tracking-wide text-white shadow-lg transition-colors hover:bg-[#b8232c] ${
+                                i === current ? "" : "pointer-events-none"
+                            }`}
+                        >
+                            {slide.cta.label}
+                        </a>
+                    )}
                 </div>
             ))}
 

@@ -121,7 +121,7 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                 </span>
                                 .
                             </p>
-                            <span className="inline-flex items-center gap-2 mt-1.5 sm:mt-0 text-[9px] sm:text-[11px] font-bold tracking-[0.15em] sm:tracking-[0.3em] uppercase text-[#f2c14e]">
+                            <span className="inline-flex items-center gap-2 mt-1.5 sm:mt-0 text-[9px] sm:text-[18px] font-bold tracking-[0.15em] sm:tracking-[0.2em] text-[#f2c14e]">
                                 Online Products, Now Available!
                             </span>
                         </div>
@@ -138,13 +138,13 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                 >
                                     {/* Product image — compact on mobile so two columns fit without crowding */}
                                     <div
-                                        className="relative w-full h-70 sm:h-100 overflow-hidden bg-slate-50 flex items-center justify-center p-2 sm:p-4 border-t-4"
+                                        className="relative w-full h-70 sm:h-80 overflow-hidden bg-slate-50 flex items-center justify-center p-2 sm:p-4 border-t-4"
                                         style={{ borderTopColor: "#f2c14e" }}
                                     >
                                         <img
                                             src={promo.image}
                                             alt={promo.alt}
-                                            className="w-full h-full object-cover transition-transform duration-500 select-none"
+                                            className="w-full h-full object-contain transition-transform duration-500 select-none"
                                             draggable={false}
                                         />
                                         {promo.eyebrow && (
