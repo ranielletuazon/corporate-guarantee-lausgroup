@@ -19,50 +19,26 @@ const slides: Slide[] = [
     {
         src: "/images/newslider1.png",
         alt: "Corporate Guarantee — slide 2",
-        cta: {
-            label: "Learn More",
-            href: "#",
-        },
     },
     {
         src: "/images/slider2.jpg",
         alt: "Corporate Guarantee — slide 3",
-        cta: {
-            label: "Learn More",
-            href: "#",
-        },
     },
     {
         src: "/images/slider3.jpg",
         alt: "Corporate Guarantee — slide 4",
-        cta: {
-            label: "Learn More",
-            href: "#",
-        },
     },
     {
         src: "/images/slider4.jpg",
         alt: "Corporate Guarantee — slide 5",
-        cta: {
-            label: "Learn More",
-            href: "#",
-        },
     },
     {
         src: "/images/slider5.jpg",
         alt: "Corporate Guarantee — slide 6",
-        cta: {
-            label: "Learn More",
-            href: "#",
-        },
     },
     {
         src: "/images/slider6.jpg",
         alt: "Corporate Guarantee — slide 7",
-        cta: {
-            label: "Learn More",
-            href: "#",
-        },
     },
 ];
 
