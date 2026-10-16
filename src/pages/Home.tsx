@@ -21,8 +21,7 @@ import {
 // Animations
 import Reveal from "./components/Reveal";
 
-import productOffer1 from "../assets/images/promos/offer1.jpg";
-import productOffer2 from "../assets/images/promos/offer2.jpg";
+import productOfferFinal from "../assets/images/collage-updated.jpg";
 
 export default function Home() {
     const products = getVisibleProducts();
@@ -39,18 +38,11 @@ export default function Home() {
             <PromoModal
                 promos={[
                     {
-                        image: productOffer2,
+                        image: productOfferFinal,
                         alt: "Senior Elite — Personal Accident for Senior Citizens",
                         title: "",
-                        link: "https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite",
+                        link: "/products/online-products",
                         accent: "#e07b39",
-                    },
-                    {
-                        image: productOffer1,
-                        alt: "Kasambahay Express — Personal Accident",
-                        title: "",
-                        link: "https://corporate-guarantee-personal-accident.webflow.io/",
-                        accent: "#2563a8",
                     },
                 ]}
             />

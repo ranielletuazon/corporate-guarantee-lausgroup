@@ -9,7 +9,7 @@ interface Slide {
 // Slide images — served directly from /public/images/
 const slides: Slide[] = [
     {
-        src: "/images/collage.jpg",
+        src: "/images/collage-updated.jpg",
         alt: "Corporate Guarantee — slide 1",
         cta: {
             label: "Buy Now",
@@ -51,15 +51,30 @@ export default function HeroCarousel() {
         setCurrent((index + slides.length) % slides.length);
     }, []);
 
-    // Autoplay — pauses on hover via the wrapper's onMouseEnter/Leave
+    // Autoplay — pauses on hover via the wrapper's onMouseEnter/Leave,
+    // and while the promo modal is open (PromoModal sets <body data-promo-open>)
     const [paused, setPaused] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+
     useEffect(() => {
-        if (paused) return;
+        const sync = () =>
+            setModalOpen(document.body.dataset.promoOpen === "true");
+        sync();
+        const observer = new MutationObserver(sync);
+        observer.observe(document.body, {
+            attributes: true,
+            attributeFilter: ["data-promo-open"],
+        });
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        if (paused || modalOpen) return;
         const timer = setInterval(() => {
             setCurrent((prev) => (prev + 1) % slides.length);
         }, AUTOPLAY_MS);
         return () => clearInterval(timer);
-    }, [paused]);
+    }, [paused, modalOpen]);
 
     return (
         <div

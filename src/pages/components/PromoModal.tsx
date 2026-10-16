@@ -41,10 +41,19 @@ export default function PromoModal({ promos }: PromoModalProps) {
         return () => window.removeEventListener("keydown", handleKey);
     }, [visible]);
 
+    // While open: lock page scroll and flag <body> so other components (e.g. HeroCarousel) can pause.
+    // The page behind stays visible — no blur, no dim.
     useEffect(() => {
-        document.body.style.overflow = visible ? "hidden" : "";
+        if (visible) {
+            document.body.style.overflow = "hidden";
+            document.body.dataset.promoOpen = "true";
+        } else {
+            document.body.style.overflow = "";
+            delete document.body.dataset.promoOpen;
+        }
         return () => {
             document.body.style.overflow = "";
+            delete document.body.dataset.promoOpen;
         };
     }, [visible]);
 
@@ -57,15 +66,15 @@ export default function PromoModal({ promos }: PromoModalProps) {
             aria-modal="true"
             aria-label="Promotional advertisement"
         >
-            {/* Backdrop */}
+            {/* Invisible backdrop — no tint, no blur. Blocks scroll/clicks on the page and closes on click. */}
             <div
-                className="absolute inset-0 bg-[#3a0a0f]/85 backdrop-blur-sm animate-[fadeIn_0.3s_ease-out]"
+                className="absolute inset-0 touch-none"
                 onClick={handleClose}
                 aria-hidden="true"
             />
 
             {/* Modal content — capped height + internal scroll so it never exceeds the viewport */}
-            <div className="relative z-10 w-full max-w-3xl max-h-[92vh] flex flex-col animate-[popIn_0.35s_ease-out]">
+            <div className="relative z-10 w-full max-w-2xl max-h-[92vh] flex flex-col animate-[popIn_0.35s_ease-out]">
                 {/* Close button */}
                 <button
                     onClick={handleClose}
@@ -128,7 +137,7 @@ export default function PromoModal({ promos }: PromoModalProps) {
                     </div>
 
                     {/* Two products — always side by side, even on mobile. Scrolls internally if content still runs tall. */}
-                    <div className="grid grid-cols-2 divide-x divide-slate-200 overflow-y-auto">
+                    <div className="grid grid-cols-1 divide-x divide-slate-200 overflow-y-auto">
                         {promos.slice(0, 2).map((promo, i) => {
                             const accent = promo.accent ?? "#b8232c";
                             return (
@@ -138,13 +147,13 @@ export default function PromoModal({ promos }: PromoModalProps) {
                                 >
                                     {/* Product image — compact on mobile so two columns fit without crowding */}
                                     <div
-                                        className="relative w-full h-70 sm:h-80 overflow-hidden bg-slate-50 flex items-center justify-center p-2 sm:p-4 border-t-4"
+                                        className="relative h-70 sm:h-100 overflow-hidden bg-slate-50 flex items-center justify-center border-t-4"
                                         style={{ borderTopColor: "#f2c14e" }}
                                     >
                                         <img
                                             src={promo.image}
                                             alt={promo.alt}
-                                            className="w-full h-full object-contain transition-transform duration-500 select-none"
+                                            className="w-full h-full object-cover transition-transform duration-500 select-none"
                                             draggable={false}
                                         />
                                         {promo.eyebrow && (
@@ -220,10 +229,6 @@ export default function PromoModal({ promos }: PromoModalProps) {
             </div>
 
             <style>{`
-                @keyframes fadeIn {
-                    from { opacity: 0; }
-                    to { opacity: 1; }
-                }
                 @keyframes popIn {
                     from { opacity: 0; transform: scale(0.92) translateY(12px); }
                     to { opacity: 1; transform: scale(1) translateY(0); }
