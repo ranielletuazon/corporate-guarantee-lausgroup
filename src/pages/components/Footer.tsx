@@ -45,6 +45,10 @@ const quickLinks = [
     { label: "FAQs", href: "/faqs" },
     { label: "Data Privacy Notice", href: "/data-privacy-notice" },
     { label: "Contact Us", href: "/contact-us" },
+    {
+        label: "Registry fo Insurance Agents",
+        href: "/registry-of-insurance-agents",
+    },
 ];
 
 const products = [
