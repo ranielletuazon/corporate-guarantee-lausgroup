@@ -7,8 +7,8 @@ import { getLatestNews, getFeaturedImage } from "../assets/data/news";
 import imageBanner from "../assets/images/herobanner.jpg";
 
 // Promo
-import PromoModal from "./components/PromoModal";
-import promoImage from "../assets/images/promos/promo-image.png";
+// import PromoModal from "./components/PromoModal";
+// import promoImage from "../assets/images/promos/promo-image.png";
 
 // SEO
 import SEO, { BASE_URL } from "./components/SEO";
@@ -34,14 +34,14 @@ export default function Home() {
                 image={`${imageBanner}`}
             />
             <Header />
-            <PromoModal
+            {/* <PromoModal
                 image={promoImage}
                 alt="Online Products"
                 link="/products/online-products"
                 eyebrow="New Product"
                 title="Online Products"
                 ctaLabel="Learn More"
-            />
+            /> */}
             {/* Image Carousel Banner */}
             <Reveal>
                 <HeroCarousel />

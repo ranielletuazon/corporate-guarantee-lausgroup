@@ -17,6 +17,10 @@ const navItems: NavItem[] = [
         path: "/about-us",
         children: [
             { label: "Corporate Governance", path: "/corporate-governance" },
+            {
+                label: "Registry of Insurance Agents",
+                path: "/registry-of-insurance-agents",
+            },
         ],
     },
     { label: "Products", path: "/products" },
