@@ -125,7 +125,7 @@ export default function PromoProduct() {
                                     </p>
                                     {/* mt-auto pins the button to the card bottom so all buttons line up */}
                                     <a
-                                        href="https://sre.corporateguarantee.com.ph/home-senior-elite"
+                                        href="https://sre.corporateguarantee.com.ph/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="Buy Senior Elite now"
