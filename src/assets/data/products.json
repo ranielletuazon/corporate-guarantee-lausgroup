@@ -50,7 +50,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 2,
         "label": "Fire",
         "slug": "fire",
         "image": "fire.webp",
@@ -68,7 +68,7 @@
         ]
     },
     {
-        "id": 4,
+        "id": 3,
         "label": "Casualty",
         "slug": "casualty",
         "image": "casualty.jpg",
@@ -117,7 +117,7 @@
         ]
     },
     {
-        "id": 5,
+        "id": 4,
         "label": "Cargo",
         "slug": "cargo",
         "image": "cargo.png",
@@ -139,7 +139,7 @@
         ]
     },
     {
-        "id": 6,
+        "id": 5,
         "label": "Bonds",
         "slug": "bonds",
         "image": "bonds.webp",

@@ -17,6 +17,10 @@ const navItems: NavItem[] = [
         path: "/about-us",
         children: [
             { label: "Corporate Governance", path: "/corporate-governance" },
+            {
+                label: "Registry of Insurance Agents",
+                path: "/registry-of-insurance-agents",
+            },
         ],
     },
     {
@@ -25,12 +29,12 @@ const navItems: NavItem[] = [
         children: [
             {
                 label: "Senior Elite",
-                path: "https://corporate-guarantee-personal-accident.webflow.io/home-senior-elite",
+                path: "https://sre.corporateguarantee.com.ph/",
                 external: true,
             },
             {
                 label: "Kasambahay Express",
-                path: "https://corporate-guarantee-personal-accident.webflow.io/",
+                path: "https://kbe.corporateguarantee.com.ph/",
                 external: true,
             },
         ],

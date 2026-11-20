@@ -18,6 +18,7 @@ import CorporateGovernance from "./pages/CorporateGovernance";
 import ContactFire from "./pages/ContactFire";
 import LegacyRedirectHandler from "./pages/components/LegacyRedirectHandler";
 import PromoProduct from "./pages/PromoProduct";
+import RegistryAgents from "./pages/RegistryAgents";
 
 function App() {
     return (
@@ -59,6 +60,10 @@ function App() {
                         <Route
                             path="/data-privacy-notice"
                             element={<DataPrivacy />}
+                        />
+                        <Route
+                            path="/registry-of-insurance-agents"
+                            element={<RegistryAgents />}
                         />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
